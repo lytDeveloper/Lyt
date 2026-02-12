@@ -1,0 +1,72 @@
+/* mentions.css - react-mentions 스타일 */
+
+.mentions-input {
+  width: 100%;
+  position: relative;
+}
+
+.mentions-input__control {
+  background-color: #f9fafb;
+  border-radius: 18px;
+  min-height: 48px;
+  font-size: 14px;
+}
+
+.mentions-input__input {
+  padding: 12px 16px 12px 44px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  line-height: 1.5;
+  background: transparent;
+  min-height: 48px;
+  box-sizing: border-box;
+}
+
+.mentions-input__highlighter {
+  padding: 12px 16px 12px 44px;
+  min-height: 48px;
+  box-sizing: border-box;
+}
+
+/* 자동완성 드롭다운 (입력 필드 위에 표시) */
+.mentions-input__suggestions {
+  position: absolute !important;
+  bottom: 100% !important;
+  top: auto !important;
+  left: 0;
+  right: 0;
+  margin-bottom: 8px;
+  z-index: 100;
+}
+
+.mentions-input__suggestions__list {
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.mentions-input__suggestions__item {
+  padding: 10px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.mentions-input__suggestions__item--focused {
+  background-color: #f3f4f6;
+}
+
+/* 멘션 하이라이트 (입력 중) */
+.mentions-input__highlighter__substring {
+  background-color: rgba(37, 99, 235, 0.15);
+  border-radius: 4px;
+  color: #2563eb;
+  font-weight: 600;
+}

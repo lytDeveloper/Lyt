@@ -1,0 +1,40 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px;
+  border-radius: 16px;
+  background: var(--color-bg1);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.value {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-subText1);
+}
+
+.caption {
+  font-size: 12px;
+  color: var(--color-subText2);
+}
+
+.iconLike {
+  width: 30px;
+  height: 30px;
+}
+
+.iconQuestion {
+  width: 36px;
+  height: 36px;
+}

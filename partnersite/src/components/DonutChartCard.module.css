@@ -1,0 +1,139 @@
+.card {
+  background: var(--color-bg1);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.header {
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-subText1);
+}
+
+.summary {
+  font-size: 12px;
+  color: var(--color-subText2);
+  margin-top: 4px;
+}
+
+.content {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chartWrap {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.chart {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.base {
+  fill: none;
+  stroke: var(--color-bg1);
+  stroke-width: 12;
+}
+
+.segment {
+  fill: none;
+  stroke-width: 22;
+  stroke-linecap: round;
+  transition: transform 0.2s ease;
+}
+
+.segmentPop {
+  cursor: pointer;
+}
+
+.segmentPop:hover {
+  transform: translate(var(--offset-x), var(--offset-y));
+}
+
+.centerText {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  text-align: center;
+}
+
+.centerValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-subText2);
+}
+
+.centerLabel {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--color-subText2);
+  font-weight: 400;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.legendItem {
+  width: 200px;
+  display: grid;
+  grid-template-columns: 12px auto 12px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--color-subText2);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-bg2);
+}
+
+.legendLabel {
+  color: var(--color-subText1);
+  font-weight: 500;
+}
+
+.legendValue {
+  color: var(--color-subText2);
+}
+
+.brand {
+  background: var(--brand);
+  stroke: var(--brand);
+}
+
+.artist {
+  background: var(--artist);
+  stroke: var(--artist);
+}
+
+.creative {
+  background: var(--creative);
+  stroke: var(--creative);
+}
+
+.fan {
+  background: var(--fan);
+  stroke: var(--fan);
+}

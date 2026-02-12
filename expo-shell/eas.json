@@ -1,0 +1,36 @@
+{
+  "cli": {
+    "version": ">= 16.24.1",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "android": {
+        "credentialsSource": "remote"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "credentialsSource": "remote",
+        "image": "ubuntu-22.04-jdk-17-ndk-r26b"
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_WEBVIEW_URL": "https://app.lyt-app.io/",
+        "EXPO_USE_COMMUNITY_AUTOLINKING": "1"
+      },
+      "android": {
+        "credentialsSource": "remote",
+        "image": "ubuntu-22.04-jdk-17-ndk-r26b"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}

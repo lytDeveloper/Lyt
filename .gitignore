@@ -1,0 +1,4 @@
+.vercel
+.env*.local
+.claude/settings.json
+.claude/settings.local.json

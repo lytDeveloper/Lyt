@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="light-content" />
+  <meta name="msapplication-navbutton-color" content="#ffffff" />
+  <!-- Preconnect to Supabase to reduce connection setup delay for images/videos -->
+  <link rel="dns-prefetch" href="%VITE_SUPABASE_URL%">
+  <link rel="preconnect" href="%VITE_SUPABASE_URL%" crossorigin>
+  <!-- Web fonts: Abel & Pretendard Variable -->
+  <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+  <style>
+    /* Pretendard Variable Font - 단일 파일로 모든 weight 지원 (3.1MB → 2MB) */
+    @font-face {
+      font-family: 'Pretendard';
+      src: url('/fonts/PretendardVariable.woff2') format('woff2-variations');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+  <title>webapp</title>
+  <style>
+    /* Global styles to prevent horizontal screen cutoff on mobile */
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100vw;
+      background-color: #ffffff !important;
+    }
+
+    /* Requirement 2: Prevent image drag on native app (Expo WebView) */
+    img {
+      /* Prevent drag on desktop browsers */
+      -webkit-user-drag: none;
+      -khtml-user-drag: none;
+      -moz-user-drag: none;
+      -o-user-drag: none;
+      /* Prevent text/image selection */
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      /* Prevent iOS long-press context menu */
+      -webkit-touch-callout: none;
+      /* Prevent touch gestures from interfering (allow only tap/click) */
+      touch-action: manipulation;
+      /* Prevent pointer events on drag attempts */
+      pointer-events: auto;
+    }
+
+    /* Remove tap highlight for native app feel */
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Requirement 10: Prevent iOS input auto-zoom (min 16px font-size) */
+    input,
+    textarea,
+    select {
+      font-size: 16px !important;
+    }
+
+    /* ========================================
+       Skeleton UI - JS 로드 전 표시
+       FCP(First Contentful Paint) 개선용
+       ======================================== */
+    #initial-skeleton {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      height: 100dvh;
+      /* 모바일 브라우저 대응 */
+      max-width: 768px;
+      margin: 0 auto;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skeleton-header {
+      height: 56px;
+      background: #fff;
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 768px;
+      z-index: 1000;
+    }
+
+    .skeleton-slider {
+      height: 60vh;
+      max-height: 524px;
+      margin-top: 56px;
+      /* header 높이 */
+      background: linear-gradient(90deg, #f5f5f5 25%, #ebebeb 50%, #f5f5f5 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite linear;
+    }
+
+    .skeleton-panel {
+      flex: 1;
+      background: #fff;
+      border-radius: 40px 40px 0 0;
+      margin-top: -24px;
+      /* 패널 오버랩 */
+      padding: 24px;
+      position: relative;
+      z-index: 200;
+      box-shadow: 0px -4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .skeleton-handle {
+      width: 40px;
+      height: 4px;
+      background: #E0E0E0;
+      border-radius: 2px;
+      margin: 0 auto 20px;
+    }
+
+    .skeleton-content-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .skeleton-box {
+      background: linear-gradient(90deg, #f5f5f5 25%, #ebebeb 50%, #f5f5f5 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite linear;
+      border-radius: 12px;
+    }
+
+    .skeleton-box-small {
+      width: 90px;
+      height: 120px;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 200% 0;
+      }
+
+      100% {
+        background-position: -200% 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <!-- 스켈레톤 UI: JS 로드 전 표시, React 렌더링 후 자동 제거 -->
+    <div id="initial-skeleton">
+      <div class="skeleton-header"></div>
+      <div class="skeleton-slider"></div>
+      <div class="skeleton-panel">
+        <div class="skeleton-handle"></div>
+        <!-- 급상승 프로젝트 영역 스켈레톤 -->
+        <div class="skeleton-content-row">
+          <div class="skeleton-box skeleton-box-small"></div>
+          <div class="skeleton-box skeleton-box-small"></div>
+          <div class="skeleton-box skeleton-box-small"></div>
+          <div class="skeleton-box skeleton-box-small"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // React 렌더링 완료 후 스켈레톤 제거
+    // data-home-loaded 속성이 추가되면 스켈레톤을 부드럽게 제거
+    (function () {
+      var observer = new MutationObserver(function (mutations) {
+        var skeleton = document.getElementById('initial-skeleton');
+        var homeLoaded = document.querySelector('[data-home-loaded]');
+        if (skeleton && homeLoaded) {
+          // 부드러운 전환을 위해 opacity 애니메이션
+          skeleton.style.transition = 'opacity 200ms ease-out';
+          skeleton.style.opacity = '0';
+          setTimeout(function () {
+            if (skeleton.parentNode) {
+              skeleton.parentNode.removeChild(skeleton);
+            }
+          }, 200);
+          observer.disconnect();
+        }
+      });
+      var root = document.getElementById('root');
+      if (root) {
+        observer.observe(root, { childList: true, subtree: true });
+      }
+      // 5초 후 강제 제거 (fallback - 혹시 data-home-loaded가 없는 페이지로 진입한 경우)
+      setTimeout(function () {
+        var skeleton = document.getElementById('initial-skeleton');
+        if (skeleton && skeleton.parentNode) {
+          skeleton.style.transition = 'opacity 200ms ease-out';
+          skeleton.style.opacity = '0';
+          setTimeout(function () {
+            if (skeleton.parentNode) {
+              skeleton.parentNode.removeChild(skeleton);
+            }
+          }, 200);
+        }
+        observer.disconnect();
+      }, 5000);
+    })();
+
+    // Prevent image drag in Expo WebView - draggable 속성 추가
+    (function () {
+      // 모든 기존 이미지에 draggable="false" 설정
+      function disableImageDrag() {
+        var images = document.getElementsByTagName('img');
+        for (var i = 0; i < images.length; i++) {
+          images[i].setAttribute('draggable', 'false');
+        }
+      }
+
+      // 초기 로드 시 실행
+      disableImageDrag();
+
+      // DOM 변경 감지하여 새로 추가되는 이미지에도 적용
+      var imgObserver = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+          if (mutation.addedNodes.length) {
+            for (var i = 0; i < mutation.addedNodes.length; i++) {
+              var node = mutation.addedNodes[i];
+              if (node.tagName === 'IMG') {
+                node.setAttribute('draggable', 'false');
+              } else if (node.querySelectorAll) {
+                var imgs = node.querySelectorAll('img');
+                for (var j = 0; j < imgs.length; j++) {
+                  imgs[j].setAttribute('draggable', 'false');
+                }
+              }
+            }
+          }
+        });
+      });
+
+      // body 전체를 관찰
+      if (document.body) {
+        imgObserver.observe(document.body, { childList: true, subtree: true });
+      } else {
+        // body가 아직 없으면 DOMContentLoaded 이벤트 대기
+        document.addEventListener('DOMContentLoaded', function () {
+          imgObserver.observe(document.body, { childList: true, subtree: true });
+          disableImageDrag();
+        });
+      }
+    })();
+  </script>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

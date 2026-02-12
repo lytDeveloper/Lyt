@@ -1,0 +1,34 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.env
+# Cursor MCP 설정 파일 (보안 토큰 포함)
+mcp.json
+
+# 관리자 권한 스크립트
+scripts/seedjs.js
+scripts/resetjs.js
+.vercel
+.env*.local

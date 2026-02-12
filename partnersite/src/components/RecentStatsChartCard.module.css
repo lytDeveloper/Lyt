@@ -1,0 +1,190 @@
+.card {
+  background: var(--color-bg1);
+  border: 1px solid var(--color-bg2);
+  border-radius: 24px;
+  padding: 34px 40px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.legend {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--color-subText2);
+}
+
+.legendItem {
+  position: relative;
+  padding-left: 16px;
+}
+
+.legendItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+}
+
+.legendPurple::before {
+  background: var(--color2);
+}
+
+.legendPink::before {
+  background: var(--color1);
+}
+
+.legendBlue::before {
+  background: var(--color3);
+}
+
+.chartArea {
+  position: relative;
+  padding: 28px 0;
+  border-top: 2px solid var(--color-grey1);
+}
+
+.chart {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+.series {
+  pointer-events: none;
+}
+
+.pointGroup {
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.pointCircle {
+  fill: var(--white);
+  stroke: currentColor;
+  stroke-width: 1.5px;
+  transition: fill 0.2s ease;
+}
+
+.pointGroup:hover .pointCircle {
+  fill: currentColor;
+}
+
+.svgTooltip {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.pointGroup:hover .svgTooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.svgTooltipBg {
+  fill: var(--color-subText1);
+}
+
+.svgTooltipArrow {
+  fill: var(--color-subText1);
+}
+
+.svgTooltipValue {
+  fill: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.svgTooltipLabel {
+  fill: var(--white);
+  font-size: 10px;
+}
+
+.yAxis {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--color-grey1);
+}
+
+.xAxis {
+  position: absolute;
+  left: 0px;
+  right: 8px;
+  bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--color-grey1);
+  padding-left: 40px;
+}
+
+.tooltip {
+  position: absolute;
+  background: var(--color-subText1);
+  color: var(--white);
+  padding: 6px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: var(--color-subText1) transparent transparent transparent;
+}
+
+.tooltipValue {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.tooltipLabel {
+  font-size: 10px;
+}
+
+.tooltipBlue {
+  left: 110px;
+  top: 46px;
+}
+
+.tooltipPink {
+  left: 285px;
+  top: 60px;
+}
+
+.tooltipPurple {
+  left: 375px;
+  top: 30px;
+}

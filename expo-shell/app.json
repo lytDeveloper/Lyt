@@ -1,0 +1,162 @@
+{
+  "expo": {
+    "name": "라잇",
+    "slug": "expo-shell",
+    "version": "1.0.3",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#3366FF"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.jhcol.bridgeshell",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "LSApplicationQueriesSchemes": [
+          "supertoss",
+          "kb-acp",
+          "liivbank",
+          "newliiv",
+          "kbbank",
+          "nhappcardansimclick",
+          "nhallonepayansimclick",
+          "nonghyupcardansimclick",
+          "lottesmartpay",
+          "lotteappcard",
+          "mpocket.online.ansimclick",
+          "ansimclickscard",
+          "tswansimclick",
+          "ansimclickipcollect",
+          "vguardstart",
+          "samsungpay",
+          "scardcertiapp",
+          "monimopay",
+          "monimopayauth",
+          "shinhan-sr-ansimclick",
+          "smshinhanansimclick",
+          "com.wooricard.wcard",
+          "newsmartpib",
+          "wooripay",
+          "citispay",
+          "citicardappkr",
+          "citimobileapp",
+          "cloudpay",
+          "hanawalletmembers",
+          "hanaskcardmobileportal",
+          "hdcardappcardansimclick",
+          "smhyundaiansimclick",
+          "shinsegaeeasypayment",
+          "payco",
+          "lpayapp",
+          "lmslpay",
+          "ispmobile",
+          "kftc-bankpay",
+          "kb-bankpay",
+          "tauthlink",
+          "ktauthexternalcall",
+          "upluscorporation",
+          "kakaotalk",
+          "kakaobank",
+          "naversearchthirdlogin"
+        ]
+      }
+    },
+    "android": {
+      "package": "com.jhcol.bridgeshell",
+      "googleServicesFile": "./google-services.json",
+      "useNextNotificationsApi": true,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "usesCleartextTraffic": false
+    },
+    "extra": {
+      "eas": {
+        "projectId": "fc9518bd-89f1-41a3-9622-a70fdbd56652"
+      }
+    },
+    "owner": "dosrm",
+    "scheme": "bridge",
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "gradlePluginVersion": "8.6.1",
+            "kotlinVersion": "2.1.21",
+            "manifestQueries": {
+              "package": [
+                "com.kakao.talk",
+                "com.nhn.android.search",
+                "com.kakaobank.channel",
+                "com.samsung.android.spay",
+                "com.samsung.android.spaylite",
+                "net.ib.android.smcard",
+                "com.shinhan.smartcaremgr",
+                "com.shinhan.sbanking",
+                "com.shcard.smartpay",
+                "com.shinhancard.smartshinhan",
+                "com.mobiletoong.travelwallet",
+                "com.hyundaicard.appcard",
+                "com.lumensoft.touchenappfree",
+                "kr.co.samsungcard.mpocket",
+                "nh.smart.nhallonepay",
+                "com.kbcard.cxh.appcard",
+                "com.kbstar.liivbank",
+                "com.kbstar.reboot",
+                "com.kbstar.kbbank",
+                "kvp.jjy.MispAndroid320",
+                "com.lcacApp",
+                "com.lottemembers.android",
+                "com.hanaskcard.paycla",
+                "com.hanaskcard.rocomo.potal",
+                "kr.co.hanamembers.hmscustomer",
+                "kr.co.citibank.citimobile",
+                "com.wooricard.wpay",
+                "com.wooricard.smartapp",
+                "com.wooribank.smart.npib",
+                "viva.republica.toss",
+                "com.ssg.serviceapp.android.egiftcertificate",
+                "com.nhnent.payapp",
+                "com.lguplus.paynow",
+                "com.lotte.lpay",
+                "com.kftc.bankpay.android",
+                "com.TouchEn.mVaccine.webs",
+                "kr.co.shiftworks.vguardweb",
+                "com.ahnlab.v3mobileplus"
+              ]
+            }
+          }
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification_icon_small.png",
+          "color": "#3366FF",
+          "sounds": []
+        }
+      ],
+      [
+        "expo-apple-authentication"
+      ],
+      [
+        "@sentry/react-native/expo",
+        {
+          "url": "https://sentry.io/",
+          "project": "react-native",
+          "organization": "colagency"
+        }
+      ],
+      "./plugins/withAndroidLargeIcon.js"
+    ]
+  }
+}

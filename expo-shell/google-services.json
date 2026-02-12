@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "181893901262",
+    "project_id": "bridge-app-b3509",
+    "storage_bucket": "bridge-app-b3509.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:181893901262:android:07a9693ab11ed664b8d99f",
+        "android_client_info": {
+          "package_name": "com.jhcol.bridgeshell"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9Puv9r_-3efBowQRZYoUAQ6wm6nZdzSM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,6 @@
+---
+alwaysApply: true
+## Common Styles
+- `/src/styles/onboarding/common.styles.ts`  
+-  → includes shared colors, layout mixins, and text variants.
+---

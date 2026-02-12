@@ -1,0 +1,75 @@
+@import url(./assets/styles/reset.min.css);
+@import url(./assets/styles/pretendard-subset.css);
+
+body {
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --black20: rgba(0, 0, 0, 0.2);
+
+  --color-main: #2563EB;
+  --color-main10: #EFF6FF;
+  --color-main50: #1D4ED8;
+  --color-main100: #1E3A8A;
+
+  --color-subText1: #333333;
+  --color-subText2: #6B7280;
+
+  --color-bg1: #FAFAFA;
+  --color-bg2: #E6E6E6;
+  --color-grey1: #AEAEAE;
+  --color-grey2: #F3F4F6;
+
+  --color1: #EA40B7;
+  --color2: #8E7CFD;
+  --color3: #18A0FB;
+  --color4: #14ED44;
+  --color5: #F36A6A;
+  --color6: #DC2626;
+  --color7: #EA580C;
+
+  --brand: #B7E2F4;
+  --artist: #CDC1FF;
+  --creative: #CCE0AC;
+  --fan: #F5AFAF;
+
+  --font-ko: "Pretendard",
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    Roboto,
+    "Helvetica Neue",
+    "Segoe UI",
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    "Malgun Gothic",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    sans-serif;
+
+  --card: 0px 2px 5px 0px rgba(50, 50, 105, 0.15),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.05);
+
+  --card-hover: 0px 3px 8px rgba(37, 99, 235, 0.16);
+
+}
+
+/****************** coommon */
+html {
+  background-color: var(--white);
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  line-height: 1;
+  font-family: var(--font-ko);
+  color: var(--black);
+}

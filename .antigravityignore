@@ -1,0 +1,9 @@
+node_modules/
+.expo/
+.git/
+ios/
+android/
+dist/
+web-build/
+package-lock.json
+yarn.lock

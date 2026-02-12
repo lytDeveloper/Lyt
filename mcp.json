@@ -1,0 +1,27 @@
+{
+  "mcpServers": {
+    "supabase": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@supabase/mcp-server-supabase@latest",
+        "--project-ref", "xianrhwkdarupnvaumti",
+        "--debug"
+      ],
+      "env": {
+        "SUPABASE_URL": "https://xianrhwkdarupnvaumti.supabase.co",
+        "SUPABASE_SERVICE_ROLE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhpYW5yaHdrZGFydXBudmF1bXRpIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MTI0MzUzMSwiZXhwIjoyMDc2ODE5NTMxfQ.qrnf1T_WzHXwbSdgw_0hQH0xb9QrAInf7t6-5KAkLtI"
+      }
+    },
+    "TalkToFigma": {
+      "command": "bunx",
+      "args": [
+        "cursor-talk-to-figma-mcp@latest",
+        "--port",
+        "3055",
+        "--channel",
+        "nxkyii81"
+      ]
+    }
+  }
+}

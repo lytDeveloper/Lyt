@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  --toastify-color-light: #fff;
+  --toastify-color-dark: #121212;
+  --toastify-color-info: #2563EB;
+  --toastify-color-success: #22c55e;
+  --toastify-color-warning: #FACC15;
+  --toastify-color-error: #EA4335;
+  --toastify-color-transparent: rgba(255, 255, 255, 0.7);
+
+  /* Force light mode only - prevents dark mode issues */
+  color-scheme: light;
+  color: #213547;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Pretendard, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  overflow-x: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow text selection in inputs and textareas */
+input,
+textarea {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Image lazy loading optimization */
+img[loading="lazy"] {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 400px;
+}
+
+/* Prevent layout shift while images load */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* React Toastify Glassmorphism Customization */
+/* 기본 스타일 (Android/Desktop) */
+.Toastify__toast {
+  background: rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(8px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(8px) saturate(180%) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  border: 0.1px solid rgba(255, 255, 255, 0.3) !important;
+  padding: 16px !important;
+  color: #333 !important;
+  font-family: Pretendard, sans-serif !important;
+  width: fit-content !important;
+  min-width: 90vw !important;
+  max-width: 90vw !important;
+  height: auto !important;
+  top: 10px;
+}
+
+/* iOS Glass Fallback: blur 축소 + gradient + border로 보완 */
+body.is-ios .Toastify__toast {
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.22),
+      rgba(255, 255, 255, 0.12)) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 8px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+.Toastify__toast-body {
+  font-weight: 500;
+  font-size: 14px;
+  white-space: nowrap;
+  /* 줄바꿈 방지 */
+}
+
+/* Toast Icon Customization */
+.Toastify__toast-icon {
+  /* 아이콘을 숨기려면: display: none !important; */
+  /* 아이콘 크기 조정:  */
+  width: 16px !important;
+  height: 16px !important;
+  /* 아이콘 색상 변경: filter: brightness(0) saturate(100%) invert(1) !important; */
+  /* 커스텀 아이콘 이미지 사용: 
+     background-image: url('your-icon-path.svg') !important;
+     background-size: contain !important;
+     background-repeat: no-repeat !important;
+     background-position: center !important;
+  */
+}
+
+.Toastify__close-button {
+  color: #666 !important;
+  opacity: 0.7;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1;
+}
+
+/* Success Toast Specifics */
+.Toastify__toast--success {
+  /* border-bottom: 1px solid rgba(34, 197, 94, 0.3) !important; */
+}
+
+/* Info Toast Specifics */
+.Toastify__toast--info {
+  /* border-left: 4px solid #2563EB !important; */
+}
+
+/* Warning Toast Specifics */
+.Toastify__toast--warning {
+  /* border-left: 4px solid #FF9800 !important; */
+}
+
+/* Error Toast Specifics */
+.Toastify__toast--error {
+  /* border-left: 4px solid #EA4335 !important; */
+}

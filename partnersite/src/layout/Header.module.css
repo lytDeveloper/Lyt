@@ -1,0 +1,55 @@
+.layout {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  margin: 0 auto;
+  height: 66px;
+  background-color: var(--color-bg1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  width: 87px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+}
+
+.loginBtn {
+  padding: 8px 16px;
+  background-color: var(--color-main);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  line-height: 1;
+}
+
+.loginBtn:hover {
+  background-color: var(--color-main50);
+}

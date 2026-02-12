@@ -1,0 +1,4 @@
+---
+alwaysApply: true
+- message.error, info, success 대신 toast.~~ 사용
+---

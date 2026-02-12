@@ -1,0 +1,183 @@
+.memberCard {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: var(--card);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.memberHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.memberInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.memberAvatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  position: relative;
+}
+
+.memberStatusOnline,
+.memberStatusOffline {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+}
+
+.memberStatusOnline {
+  background: var(--color4);
+}
+
+.memberStatusOffline {
+  background: var(--color-grey2);
+}
+
+.memberName {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.memberRole {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--color-subText2);
+}
+
+.percentInputGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.percentInput {
+  width: 52px;
+  height: 32px;
+  border: 1px solid var(--color-bg2);
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.percentInput:focus {
+  outline: none;
+  border-color: var(--color-main);
+}
+
+.percentInput:disabled {
+  background: var(--color-grey2);
+  color: var(--color-grey1);
+  cursor: not-allowed;
+}
+
+.percentSuffix {
+  font-size: 14px;
+  color: var(--color-subText1);
+}
+
+.sliderRow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sliderLabel {
+  font-size: 13px;
+  color: var(--color-subText2);
+}
+
+.slider {
+  width: 100%;
+  height: 8px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+/* input type range 스타일 초기화 */
+.slider::-webkit-slider-runnable-track {
+  height: 8px;
+  background: var(--color-bg2);
+  border: none;
+  border-radius: 999px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-main);
+  cursor: pointer;
+}
+
+.slider::-moz-range-track {
+  height: 8px;
+  background: var(--color-bg2);
+  border: none;
+  border-radius: 999px;
+}
+
+.slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-main);
+  cursor: pointer;
+}
+
+.slider:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.expectedIncome {
+  background: var(--color-grey2);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expectedIncomeLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-subText1);
+}
+
+.expectedIncomeValue {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-main);
+}

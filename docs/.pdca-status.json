@@ -1,0 +1,451 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-02-11T17:27:14.412Z",
+  "activeFeatures": [
+    "scripts",
+    "confirm-payment",
+    "download-digital-product",
+    "send-digital-product-email",
+    "webapp",
+    "payment",
+    "routes",
+    "landing"
+  ],
+  "primaryFeature": "scripts",
+  "features": {
+    "scripts": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-11T14:49:02.419Z",
+        "lastUpdated": "2026-02-11T14:49:02.419Z"
+      },
+      "lastFile": "C:\\Users\\이창한\\OneDrive\\바탕 화면\\BridgeApp\\scripts\\upload-digital-products.js"
+    },
+    "confirm-payment": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-11T14:52:44.901Z",
+        "lastUpdated": "2026-02-11T16:51:52.966Z"
+      },
+      "lastFile": "C:\\Users\\이창한\\OneDrive\\바탕 화면\\BridgeApp\\supabase\\functions\\confirm-payment\\index.ts"
+    },
+    "download-digital-product": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-11T14:53:16.273Z",
+        "lastUpdated": "2026-02-11T14:53:16.273Z"
+      },
+      "lastFile": "C:\\Users\\이창한\\OneDrive\\바탕 화면\\BridgeApp\\supabase\\functions\\download-digital-product\\index.ts"
+    },
+    "send-digital-product-email": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-11T14:53:49.724Z",
+        "lastUpdated": "2026-02-11T17:08:01.367Z"
+      },
+      "lastFile": "C:\\Users\\이창한\\OneDrive\\바탕 화면\\BridgeApp\\supabase\\functions\\send-digital-product-email\\index.ts"
+    },
+    "webapp": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-11T14:54:16.528Z",
+        "lastUpdated": "2026-02-11T17:27:14.412Z"
+      },
+      "lastFile": "C:\\Users\\이창한\\OneDrive\\바탕 화면\\BridgeApp\\webapp\\src\\services\\paymentService.ts"
+    },
+    "payment": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-11T14:58:26.951Z",
+        "lastUpdated": "2026-02-11T16:40:22.062Z"
+      },
+      "lastFile": "C:\\Users\\이창한\\OneDrive\\바탕 화면\\BridgeApp\\webapp\\src\\pages\\payment\\CheckoutPage.tsx"
+    },
+    "routes": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-11T15:00:14.274Z",
+        "lastUpdated": "2026-02-11T15:00:14.274Z"
+      },
+      "lastFile": "C:\\Users\\이창한\\OneDrive\\바탕 화면\\BridgeApp\\webapp\\src\\routes\\lazyPages.tsx"
+    },
+    "landing": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-11T15:12:19.818Z",
+        "lastUpdated": "2026-02-11T17:18:35.922Z"
+      },
+      "lastFile": "C:\\Users\\이창한\\OneDrive\\바탕 화면\\BridgeApp\\landing\\script.js"
+    }
+  },
+  "pipeline": {
+    "currentPhase": 1,
+    "level": "Dynamic",
+    "phaseHistory": []
+  },
+  "session": {
+    "startedAt": "2026-02-09T01:55:12.861Z",
+    "onboardingCompleted": false,
+    "lastActivity": "2026-02-11T17:27:14.412Z"
+  },
+  "history": [
+    {
+      "timestamp": "2026-02-11T14:49:02.419Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:52:44.901Z",
+      "feature": "confirm-payment",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:52:47.850Z",
+      "feature": "confirm-payment",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:52:56.403Z",
+      "feature": "confirm-payment",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:53:16.273Z",
+      "feature": "download-digital-product",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:53:49.724Z",
+      "feature": "send-digital-product-email",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:54:16.528Z",
+      "feature": "webapp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:54:21.067Z",
+      "feature": "webapp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:54:24.715Z",
+      "feature": "webapp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:54:27.199Z",
+      "feature": "webapp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:54:41.846Z",
+      "feature": "webapp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:54:52.369Z",
+      "feature": "webapp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:58:26.952Z",
+      "feature": "payment",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:58:30.359Z",
+      "feature": "payment",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:58:33.269Z",
+      "feature": "payment",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:58:39.651Z",
+      "feature": "payment",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:58:41.740Z",
+      "feature": "payment",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:58:44.592Z",
+      "feature": "payment",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:58:58.222Z",
+      "feature": "webapp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:59:00.474Z",
+      "feature": "webapp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:59:02.705Z",
+      "feature": "webapp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:59:04.849Z",
+      "feature": "webapp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T14:59:34.907Z",
+      "feature": "webapp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T15:00:14.274Z",
+      "feature": "routes",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T15:00:21.243Z",
+      "feature": "webapp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T15:00:40.572Z",
+      "feature": "webapp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T15:12:19.818Z",
+      "feature": "landing",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T15:38:19.673Z",
+      "feature": "landing",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T15:38:39.105Z",
+      "feature": "landing",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T15:48:34.530Z",
+      "feature": "landing",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T15:53:15.726Z",
+      "feature": "webapp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T15:53:31.367Z",
+      "feature": "webapp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T15:53:36.361Z",
+      "feature": "webapp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T15:53:41.590Z",
+      "feature": "webapp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T15:55:21.787Z",
+      "feature": "webapp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T16:10:44.570Z",
+      "feature": "payment",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T16:10:48.224Z",
+      "feature": "payment",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T16:12:06.688Z",
+      "feature": "payment",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T16:12:16.908Z",
+      "feature": "payment",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T16:26:48.126Z",
+      "feature": "payment",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T16:39:16.689Z",
+      "feature": "confirm-payment",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T16:39:22.055Z",
+      "feature": "landing",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T16:40:13.316Z",
+      "feature": "payment",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T16:40:22.062Z",
+      "feature": "payment",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T16:51:38.614Z",
+      "feature": "confirm-payment",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T16:51:52.966Z",
+      "feature": "confirm-payment",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T16:52:44.092Z",
+      "feature": "landing",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T17:06:17.940Z",
+      "feature": "send-digital-product-email",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T17:06:23.075Z",
+      "feature": "send-digital-product-email",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T17:07:02.967Z",
+      "feature": "send-digital-product-email",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T17:08:01.367Z",
+      "feature": "send-digital-product-email",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T17:18:35.922Z",
+      "feature": "landing",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-11T17:27:14.412Z",
+      "feature": "webapp",
+      "phase": "do",
+      "action": "updated"
+    }
+  ]
+}

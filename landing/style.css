@@ -1,0 +1,2767 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.en-sub-text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* --- Reset & Variables --- */
+:root {
+    --color-start: #2563EB;
+    --color-end: #4162B4;
+    --text-white: #ffffff;
+}
+
+:root {
+    --section-gap-desktop: 80px;
+    --section-gap-mobile: 50px;
+}
+
+
+section {
+    padding-top: var(--section-gap-desktop);
+    padding-bottom: var(--section-gap-desktop);
+}
+
+@media (max-width: 1024px) {
+    section {
+        padding-top: var(--section-gap-mobile);
+        padding-bottom: var(--section-gap-mobile);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: pre;
+    overflow-x: hidden;
+    font-family: 'Pretendard';
+}
+
+/* 상단 랜딩 내비게이션 */
+.landing-top-nav {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(12px);
+    z-index: 1200;
+}
+
+.landing-top-nav-btn {
+    min-width: 88px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    text-align: center;
+    color: #f3f7ff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.landing-top-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.landing-top-nav-btn.is-active {
+    background: #ffffff;
+    color: #2c54cc;
+}
+
+@media (max-width: 767px) {
+    .landing-top-nav {
+        top: 14px;
+        gap: 6px;
+        padding: 5px;
+    }
+
+    .landing-top-nav-btn {
+        min-width: 72px;
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+}
+
+/* close button */
+.close-button {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    z-index: 1000;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar {
+    width: 20px;
+    height: 2px;
+    background-color: #000;
+    margin: 2px 0;
+    position: absolute;
+}
+
+.bar1 {
+    transform: rotate(45deg);
+}
+
+.bar2 {
+    transform: rotate(-45deg);
+}
+
+/* --- Hero Section Layout & Gradient --- */
+/* --- Desktop Standard --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    /* 데스크톱: 화면 꽉 채우는 느낌을 위해 100vh 유지 (화면 높이에 따라 조정됨) */
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--color-start) 0%, var(--color-end) 100%);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    /* 텍스트 시작 여백을 줄여 위로 당깁니다. */
+    align-items: flex-start;
+    padding-top: 10vh;
+    /* 15vh -> 10vh로 줄임 */
+    padding-bottom: 50px;
+}
+
+
+/* --- [Layer 1] Background Objects (Desktop Standard) --- */
+
+/* 다리 실루엣 (데스크톱 기준: 중앙에 배치) */
+.bg-bridge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1200px;
+    z-index: 1;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.bg-bridge img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* 바닥 물결 효과 (데스크톱 기준: 폰 목업보다 조금 아래) */
+.bg-ripple {
+    position: absolute;
+    bottom: 150px;
+    /* 하단에서 50px 위로 올림 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 900px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.bg-ripple img {
+    width: 100%;
+    height: auto;
+}
+
+/* --- [Layer 2] Main Content (변경 없음) --- */
+.hero-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* (이하 텍스트, 로고, 폰 스타일은 변경 없음) */
+
+.sub-title {
+    color: var(--text-white);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.light-text {
+    color: #FFD36A;
+    position: relative;
+    animation: lightPulse 3.2s ease-in-out infinite;
+}
+
+/* 진짜 불 켜졌다 꺼지는 느낌 */
+@keyframes lightPulse {
+    0% {
+        color: #FFD36A;
+        opacity: 0.45;
+        text-shadow:
+            0 0 2px rgba(255, 211, 106, 0.2),
+            0 0 6px rgba(255, 211, 106, 0.15);
+    }
+
+    40% {
+        /* 🔥 완전히 켜진 순간 */
+        color: #FFF6CC;
+        opacity: 1;
+        text-shadow:
+            0 0 8px rgba(255, 246, 204, 0.9),
+            /* 코어 */
+            0 0 18px rgba(255, 224, 138, 0.7),
+            /* 확산 */
+            0 0 32px rgba(255, 183, 3, 0.45);
+        /* 주변 */
+    }
+
+    100% {
+        color: #FFD36A;
+        opacity: 0.55;
+        text-shadow:
+            0 0 4px rgba(255, 211, 106, 0.25),
+            0 0 10px rgba(255, 211, 106, 0.2);
+    }
+}
+
+
+.logo-wrapper {
+    margin-bottom: 40px;
+    width: 250px;
+}
+
+.logo-wrapper img {
+    width: 100%;
+    height: auto;
+}
+
+.visual-group {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    /* 600px -> 800px로 확대 (이미지가 담길 그릇 크기) */
+    height: 500px;
+    /* 400px -> 500px로 높이도 함께 확보 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width:892px) {
+    .visual-group {
+        padding-top: 200px;
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+        /* 위로 15px 이동 */
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* 휴대폰 이미지에 적용 */
+.obj-phone {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+
+    /* 기존 등장 애니메이션이 끝난 후 실행되거나, 함께 작동하도록 설정 */
+    animation: floating 3s ease-in-out infinite;
+}
+
+.obj-orbit {
+    position: absolute;
+    width: 140%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* --- Mobile Responsive (768px 이하) --- */
+@media (max-width: 768px) {
+
+    /* (그 외 서브 타이틀, 로고 크기 등은 이전과 동일) */
+    .sub-title {
+        font-size: 1.2rem;
+    }
+
+    .logo-wrapper {
+        width: 160px;
+        margin-bottom: 20px;
+    }
+}
+
+/* --- Mobile Responsive (768px 이하) --- */
+@media (max-width: 768px) {
+
+    .hero-section {
+        /* min-height를 90vh -> auto로 변경하여, 콘텐츠 길이에 따라 높이가 결정되게 만듭니다. */
+        min-height: auto;
+
+        /* 텍스트 시작 여백을 대폭 줄입니다. */
+        padding-top: 80px;
+        /* 15vh -> 80px로 고정값 설정 (화면 크기에 덜 영향받음) */
+        padding-bottom: 50px;
+        /* 하단 여백도 넉넉히 확보 */
+    }
+
+    /* 폰 목업을 위로 당기기 위해 로고와 폰 사이의 마진도 줄입니다. */
+    .logo-wrapper {
+        width: 160px;
+        margin-bottom: 10px;
+        /* 20px -> 10px로 줄여 폰 목업을 위로 당김 */
+    }
+
+    /* 다리 실루엣의 위치도 폰 목업을 따라 위로 올립니다. */
+    .bg-bridge {
+        top: 25%;
+        /* 40% -> 25%로 조정 */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150%;
+        max-width: none;
+        height: 100%;
+        opacity: 0.2;
+    }
+
+    /* 물결 효과도 폰 목업을 따라 위로 올립니다. */
+    .bg-ripple {
+        position: absolute;
+        z-index: 9;
+        top: 60%;
+        /* 70% -> 65%로 조정 */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120%;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 368px) {
+
+    /* 물결 효과도 폰 목업을 따라 위로 올립니다. */
+    .bg-ripple {
+        position: absolute;
+        z-index: 9;
+        top: 80%;
+        /* 70% -> 65%로 조정 */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120%;
+        max-width: 350px;
+    }
+}
+
+/* ********************************************************************************************** */
+
+/* ============================================================
+   Overview Section - Base & Background
+   ============================================================ */
+.overview-section {
+    position: relative;
+    /* padding: 180px 0; */
+    /* 0% #4162B4 -> 100% #FFFFFF 그라데이션 */
+    background: linear-gradient(180deg, #4162B4 0%, #FFFFFF 100%);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ============================================================
+   Glassmorphism Bubbles (유리 질감 디자인)
+   ============================================================ */
+.f-bubble {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    /* 투명한 흰색 배경 */
+    backdrop-filter: blur(20px);
+    /* 유리 블러 효과 */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* 은은한 외곽선 */
+    padding: 30px 55px;
+    border-radius: 100px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #FFFFFF;
+    white-space: nowrap;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    animation: floatingBubbles 6s ease-in-out infinite;
+    z-index: 2;
+}
+
+/* 부유 애니메이션 */
+@keyframes floatingBubbles {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(5px, -15px) rotate(1deg);
+    }
+
+    66% {
+        transform: translate(-5px, -10px) rotate(-1deg);
+    }
+}
+
+/* ============================================================
+   Desktop Layout (1025px 이상)
+   ============================================================ */
+@media (min-width: 1025px) {
+    .bubbles-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+    }
+
+    /* 피그마 기준 좌우 분산 배치 */
+    .b1 {
+        top: 15%;
+        left: 8%;
+        animation-delay: 0s;
+    }
+
+    .b2 {
+        top: 10%;
+        left: 3%;
+        animation-delay: 1s;
+    }
+
+    .b3 {
+        bottom: 25%;
+        left: 10%;
+        animation-delay: 0.5s;
+    }
+
+    .b4 {
+        top: 18%;
+        right: 10%;
+        animation-delay: 1.5s;
+    }
+
+    .b5 {
+        top: 10%;
+        right: 1%;
+        animation-delay: 0.2s;
+    }
+
+    .b6 {
+        bottom: 0%;
+        right: 12%;
+        animation-delay: 2.5s;
+    }
+
+    .content-area {
+        z-index: 5;
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bubbles-wrapper {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .f-bubble {
+        padding: 14px 24px;
+        font-size: 14px;
+        border-radius: 999px;
+
+        /* JS에서 transform 제어할 거라 애니메이션만 남김 */
+        animation-name: floatingMobile;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+    }
+}
+
+/* 모바일용 더 가벼운 부유 */
+@keyframes floatingMobile {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(0, -12px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* 2. 섹션 여백 및 텍스트 간격 극소화 */
+
+
+
+/* ============================================================
+   Typography (데스크톱 기준)
+   ============================================================ */
+
+.content-area .text-center {
+    max-width: 1200px;
+    /* 원하는 폭 */
+    margin: 0 auto;
+    /* 블록 자체 중앙 */
+    text-align: center;
+    /* 텍스트 중앙 */
+}
+
+.description-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.description,
+.description-en {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .description-en {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .en-text {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .sub-text {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .en-sub-text {
+        display: none;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .content-area {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.section-label {
+    font-size: 35px;
+    font-weight: 800;
+    color: #2563EB;
+    display: block;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.headline-line-1 {
+    font-size: 50px;
+    font-weight: 500;
+    color: #FFF;
+    display: block;
+    line-height: 1.2;
+}
+
+.headline-line-2 {
+    font-size: 60px;
+    font-weight: 700;
+    color: #FFF;
+    text-shadow: 0 0 50px #2563EB;
+    display: block;
+    line-height: 1.3;
+    margin-top: 10px;
+}
+
+.description {
+    font-size: 35px;
+    font-weight: 400;
+    color: #525252;
+    margin-top: 60px;
+    line-height: 1.5;
+}
+
+.strong-description {
+    font-weight: 700;
+    color: #525252;
+}
+
+.description-en {
+    font-size: 20px;
+    font-weight: 400;
+    color: #949494;
+    margin-top: 30px;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   Mobile & Tablet Layout (1024px 이하)
+   ============================================================ */
+@media (max-width: 1024px) {
+
+    /* 말풍선 영역을 텍스트 위로 이동 */
+    .bubbles-wrapper {
+        position: relative;
+        width: 100%;
+        height: 480px;
+        /* 6개가 놀 수 있는 전용 높이 */
+        margin-bottom: 40px;
+        order: -1;
+        /* 텍스트보다 먼저 나오게 함 */
+    }
+
+    .f-bubble {
+        padding: 14px 22px;
+        font-size: 14px;
+        position: absolute;
+        /* 자유 배치 */
+    }
+
+    /* 모바일 지그재그 자유 배치 */
+    .b1 {
+        top: 5%;
+        left: 5%;
+    }
+
+    .b2 {
+        top: 15%;
+        right: 2%;
+        animation-delay: 1s;
+    }
+
+    .b3 {
+        top: 20%;
+        left: 2%;
+        animation-delay: 0.5s;
+    }
+
+    .b4 {
+        top: 26%;
+        right: 5%;
+        animation-delay: 1.5s;
+    }
+
+    .b5 {
+        top: 38%;
+        left: 10%;
+        animation-delay: 0.2s;
+    }
+
+    .b6 {
+        top: 46%;
+        right: 8%;
+        animation-delay: 0.8s;
+    }
+
+    /* 모바일 텍스트 가독성 조정 */
+    .section-label {
+        font-size: 20px;
+    }
+
+    .headline-line-1 {
+        font-size: 24px;
+        color: #FFFFFF;
+    }
+
+    .headline-line-2 {
+        font-size: 28px;
+        color: #FFFFFF;
+    }
+
+    .description {
+        font-size: 18px;
+        color: #333;
+        margin-top: 30px;
+    }
+
+    .description-en {
+        font-size: 14px;
+        color: #666;
+    }
+}
+
+/* 1. 섹션 상단 여백을 줄여 전체를 위로 올림 */
+.overview-section {
+    padding-top: 50px !important;
+}
+
+/* 2. 말풍선 영역 하단 여백을 마이너스로 주어 텍스트를 바짝 붙임 */
+.bubbles-wrapper {
+    margin-bottom: -500px !important;
+    /* 수치를 키울수록 더 바짝 붙습니다 */
+}
+
+/* 3. 텍스트 영역 상단 여백 제거 */
+.content-area {
+    margin-top: 0 !important;
+}
+
+@media (max-width: 1024px) {
+    .bubbles-wrapper {
+        margin-bottom: -160px !important;
+        /* 모바일 간격 조절 */
+    }
+}
+
+/* 기본: 줄바꿈 숨김 (데스크톱) */
+.mobile-br {
+    display: none;
+}
+
+/* 모바일에서만 줄바꿈 활성화 */
+@media (max-width: 1024px) {
+    .mobile-br {
+        display: inline;
+    }
+}
+
+/* ********************************************************************************************** */
+
+/* --- Market Section --- */
+.market-section {
+    background-color: #ffffff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+@media (max-width: 786px) {
+    .market-section {
+        margin-top: -70px;
+    }
+}
+
+.market-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-label-blue {
+    font-size: 35px;
+    font-weight: 700;
+    color: #2563EB;
+    display: block;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 786px) {
+    .section-label-blue {
+        font-size: 20px;
+    }
+}
+
+/* --- Dark Card --- */
+.dark-card {
+    background-color: #171717;
+    color: #FFFFFF;
+    padding: 60px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 786px) {
+    .dark-card h3 {
+        padding-bottom: 50px;
+    }
+}
+
+
+.dark-card h3 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.dark-card .highlight {
+    color: #5AA9FF;
+}
+
+.dark-card .en-text {
+    font-size: 14px;
+    color: #AAAAAA;
+    margin-bottom: 80px;
+    line-height: 1.5;
+}
+
+/* --- Chart Layout & Header (배열 복구) --- */
+.chart-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 40px;
+    /* 데스크톱에서 배열이 깨지지 않도록 flex 설정을 명확히 유지 */
+}
+
+.chart-box {
+    flex-basis: 48%;
+    text-align: center;
+}
+
+.chart-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.chart-header h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+}
+
+.chart-header .sub-text {
+    font-size: 14px;
+    color: #AAAAAA;
+    margin-bottom: 5px;
+}
+
+.chart-header .source-text {
+    font-size: 12px;
+    color: #606060;
+    font-weight: 400;
+}
+
+/* --- 1. Circle Chart (원형 유지 및 애니메이션 준비) --- */
+.circle-chart {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    height: 180px;
+    /* 고정 높이 재설정 */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.circle-chart .circle {
+    /* 원형 유지를 위해 border-radius: 50%와 width/height를 명확히 유지 */
+    position: relative;
+    border-radius: 50%;
+    /* 원형 유지 핵심 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.2;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.circle-chart .sm {
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
+    background-color: #606060;
+    margin-left: 20px;
+}
+
+.circle-chart .lg {
+    width: 160px;
+    height: 160px;
+    font-size: 28px;
+    background: linear-gradient(135deg, #2563EB, #5AA9FF);
+    margin-right: 20px;
+
+    opacity: 0;
+    transform: translateX(-160px) scale(0.4);
+    /* 더 멀리 + 완전 0은 피함 */
+
+    transition:
+        opacity 1.6s ease-out,
+        transform 2.2s cubic-bezier(0.16, 1, 0.3, 1);
+    /* 극적인 ease */
+}
+
+.circle-chart .lg.animate-scale {
+    transform: scale(1);
+}
+
+.circle-chart .lg.animate-move {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+/* 연결선 및 화살표 구현 (기존 스타일 유지) */
+.circle-chart::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    width: 40%;
+    height: 4px;
+    background: linear-gradient(to right, #606060 0%, #2563EB 100%);
+    transform: translateY(-50%) scaleX(0);
+    /* ← 추가 */
+    transform-origin: left;
+    /* ← 중요 */
+    opacity: 0.5;
+    z-index: 5;
+
+    transition: transform 1.6s ease-out;
+    /* ← 애니메이션만 추가 */
+}
+
+.circle-chart.animate::before {
+    transform: translateY(-50%) scaleX(1);
+}
+
+.circle-chart::before {
+    transition-delay: 0.2s;
+}
+
+.circle-chart .lg {
+    transition-delay: 0.4s;
+}
+
+
+/* 2018년/2023년 레이블 정렬 (원형 중앙 아래로) */
+.chart-label-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto 0;
+    padding: 0;
+    color: #AAAAAA;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.chart-label-row .year-label {
+    position: relative;
+    text-align: center;
+}
+
+.chart-label-row span:first-child {
+    margin-left: 20px;
+    transform: translateX(50px);
+}
+
+.chart-label-row span:last-child {
+    margin-right: 20px;
+    transform: translateX(-80px);
+}
+
+
+/* --- 2. Pie Chart Placeholder --- */
+.pie-chart-placeholder {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: 800;
+    color: #FFFFFF;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.pie-chart-placeholder.animated-pie {
+    --p: 62;
+}
+
+.pie-chart-placeholder.animated-pie {
+    background: conic-gradient(#2563EB 62%, #606060 0);
+}
+
+/* 초기 상태: 0% 채워짐 */
+.pie-chart-placeholder.initial {
+    background: conic-gradient(#2563EB 0%, #606060 0);
+}
+
+/* 애니메이션 완료 상태: 62% 채워짐 */
+.pie-chart-placeholder.animated-pie {
+    background: conic-gradient(#2563EB 62%, #606060 0);
+}
+
+
+
+
+/* --- Mobile Responsive (768px 이하) --- */
+@media (max-width: 768px) {
+
+    .dark-card {
+        padding: 40px 20px;
+    }
+
+    .dark-card h3 {
+        font-size: 24px;
+    }
+
+    .dark-card .en-text {
+        margin-bottom: 50px;
+    }
+
+    /* 차트 세로 정렬 및 중앙 정렬 */
+    .chart-container {
+        flex-direction: column;
+        gap: 60px;
+        align-items: center;
+        /* 핵심: 차트 박스를 중앙으로 정렬 */
+    }
+
+    .chart-box {
+        flex-basis: 100%;
+        width: 100%;
+        max-width: 350px;
+        /* 모바일에서 폭을 제한하여 깔끔하게 정렬 */
+    }
+
+    .chart-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    /* 1. Circle Chart 모바일 크기 조정 */
+    .circle-chart {
+        height: 150px;
+        /* 높이 재조정 */
+        max-width: 100%;
+    }
+
+    .circle-chart .sm {
+        width: 80px;
+        height: 80px;
+        margin-left: 0;
+    }
+
+    .circle-chart .lg {
+        width: 130px;
+        height: 130px;
+        margin-right: 0;
+        /* 모바일에서도 transform: scale(0) 유지 */
+    }
+
+    /* 2. Pie Chart Placeholder (원형 유지를 위해 크기 재확인) */
+    .pie-chart-placeholder {
+        width: 150px;
+        height: 150px;
+        font-size: 30px;
+        border-radius: 50%;
+        /* 재확인 */
+    }
+
+    /* 2018년/2023년 레이블 모바일 정렬 */
+    .chart-label-row {
+        max-width: 300px;
+        /* 원형 레이아웃과 맞추기 위해 max-width 조정 */
+        justify-content: space-around;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .chart-label-row span:first-child,
+    .chart-label-row span:last-child {
+        transform: none;
+        /* 모바일에서는 transform 제거하고 margin/padding으로 간격 유지 */
+        /* 원형 중앙 아래에 오도록 미세 조정은 필요 없으나, 겹침 방지를 위해 transform 제거 */
+    }
+}
+
+
+/* ********************************************************************************************** */
+
+
+/* --- Problems Section --- */
+
+
+
+.problems-section {
+    background-color: #ffffff;
+    /* 배경색 유지 */
+    padding: 100px 0;
+}
+
+@media (max-width:768px) {
+    .problems-section {
+        margin-top: -70px;
+    }
+}
+
+/* --- Problems Section Text Reveal --- */
+
+/* 1. 애니메이션을 적용할 모든 텍스트 요소의 초기 상태 */
+.problems-section h2,
+.problems-section .en-sub-text,
+.card.black-card h4,
+.card.black-card li {
+    opacity: 0;
+
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform, opacity;
+}
+
+/* 2. 활성화 클래스가 붙었을 때의 상태 */
+.reveal-active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* 3. 등장 순서 세부 조절 (Delay) */
+/* 메인 제목과 부제 */
+.problems-section h2.reveal-active {
+    transition-delay: 0.1s;
+}
+
+.problems-section .en-sub-text.reveal-active {
+    transition-delay: 0.3s;
+}
+
+/* 카드 내부 텍스트들 (각 카드가 순서대로, 그 안의 리스트가 순서대로) */
+/* n번째 카드의 제목(h4)과 리스트(li)에 순차적 지연 부여 */
+.grid-2x2 .card:nth-child(1) h4.reveal-active {
+    transition-delay: 0.4s;
+}
+
+.grid-2x2 .card:nth-child(1) li.reveal-active {
+    transition-delay: 0.5s;
+}
+
+.grid-2x2 .card:nth-child(2) h4.reveal-active {
+    transition-delay: 0.6s;
+}
+
+.grid-2x2 .card:nth-child(2) li.reveal-active {
+    transition-delay: 0.7s;
+}
+
+/* 리스트 아이템들도 약간의 시차를 두고 싶다면 아래와 같이 추가 가능합니다 */
+.card.black-card li:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.card.black-card li:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.card.black-card li:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+
+.problems-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.problems-section .text-center {
+    text-align: center;
+}
+
+@media (max-width:786px) {
+    .problems-section .text-center {
+        padding-bottom: 30px;
+    }
+}
+
+.problems-section .mb-50 {
+    margin-bottom: 50px;
+}
+
+/* --- Icon Divider (파란색 /// 모양) --- */
+.icon-divider {
+    margin-bottom: 30px;
+}
+
+.icon-divider img {
+    /* 파란색 /// 아이콘 크기 및 중앙 정렬 */
+    width: 60px;
+    height: auto;
+    display: inline-block;
+    /* 중앙 정렬을 위해 */
+}
+
+/* --- Title & Subtitle --- */
+.problems-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #171717;
+    /* 기본 텍스트 색상 */
+    margin-bottom: 10px;
+}
+
+.problems-section .text-blue {
+    color: #2563EB;
+}
+
+.problems-section .en-sub-text {
+    /* 새로 추가된 영문 부제 스타일 */
+    font-size: 14px;
+    color: #606060;
+    line-height: 1.6;
+    margin-top: 15px;
+
+}
+
+/* --- Grid Layout (데스크톱 2x2) --- */
+.grid-2x2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    /* 계단식 스택을 위해 gap은 0으로 설정 */
+    position: relative;
+    /* padding-bottom: 200px; */
+}
+
+
+/* --- Card Style (Black Card) --- */
+.card.black-card {
+    position: sticky;
+    top: 120px;
+    /* 모두 동일 */
+    width: 100%;
+    max-width: 850px;
+    min-height: 300px;
+
+    background: #171717;
+    border-radius: 30px;
+    padding: 50px;
+
+    box-shadow: 0 20px 60px rgba(163, 163, 163, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    transition: transform 0.35s ease;
+}
+
+/* 카드 거의 겹치게 */
+.card.black-card:nth-child(1) {
+    top: 100px;
+}
+
+.card.black-card:nth-child(2) {
+    top: 120px;
+}
+
+.card.black-card:nth-child(3) {
+    top: 140px;
+}
+
+.card.black-card:nth-child(4) {
+    top: 160px;
+}
+
+.card.is-stacked {
+    transform: translateY(-6px);
+}
+
+
+.card.black-card h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+    border-bottom: 2px solid #333333;
+    /* 구분선 */
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.card.black-card ul {
+    transition: opacity 0.3s ease;
+    list-style: none;
+}
+
+.card.black-card ul li {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #CCCCCC;
+    position: relative;
+    padding-left: 20px;
+    /* 불릿 아이콘 공간 확보 */
+    margin-bottom: 10px;
+}
+
+.card.black-card ul li::before {
+    /* 커스텀 불릿 (작은 파란색 원) */
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    background-color: #2563EB;
+    border-radius: 50%;
+}
+
+
+
+.card h4 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+/* --- Mobile Responsive (768px 이하) --- */
+@media (max-width: 768px) {
+
+    .problems-section {
+        padding: 60px 0;
+    }
+
+    .problems-section h2 {
+        font-size: 23px;
+    }
+
+    /* Grid Layout (모바일 1열로 떨어짐) */
+    .grid-2x2 {
+        grid-template-columns: 1fr;
+        /* 1열 */
+        gap: 20px;
+    }
+
+    .card.black-card {
+        padding: 30px 20px;
+    }
+}
+
+.problems-section {
+    padding-bottom: 60px;
+}
+
+.solutions-section.compact {
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+.solutions-section.compact .solution-grid {
+    margin-top: 120px;
+    /* 기존 200px → 축소 */
+    gap: 80px;
+    /* 기존 100px → 축소 */
+}
+
+@media (max-width: 768px) {
+    .solutions-section.compact {
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+
+    .solutions-section.compact .solution-grid {
+        margin-top: 80px;
+        gap: 60px;
+    }
+}
+
+
+.problems-section .mb-50 {
+    margin-bottom: 30px;
+}
+
+/* ********************************************************************************************** */
+/* --- Solutions Section Layout --- */
+/* =========================
+   SECTION & GRID
+========================= */
+.solutions-section {
+    background: #fff;
+    padding: 100px 0 80px;
+    overflow: hidden;
+}
+
+@media (max-width:786px) {
+    .solutions-section {
+        margin-top: -70px;
+    }
+}
+
+.solutions-section h2 {
+    font-size: 36px;
+    line-height: 1.35;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+@media (max-width:786px) {
+    .solutions-section h2 {
+        font-size: 23px;
+        line-height: 1.35;
+        text-align: center;
+    }
+}
+
+.en-sub-text {
+    font-size: 14px;
+    color: #606060;
+    margin-top: 14px;
+    text-align: center;
+}
+
+.book-grid {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    margin: 140px auto 0;
+    max-width: 1200px;
+    position: relative;
+}
+
+/* 중앙 구분선 */
+.book-grid::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, .08), transparent);
+    transform: translateX(-50%);
+}
+
+.book-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.role-title {
+    font-size: 70px;
+    font-weight: 900;
+    margin-bottom: 24px;
+    color: #d3d3d3;
+    text-align: center;
+}
+
+/* =========================
+   BOOK CARD (낱장 물리 효과)
+========================= */
+.book-card {
+    position: relative;
+    width: 320px;
+    height: 170px;
+    perspective: 2500px;
+    cursor: grab;
+    /* user-select: none; */
+    /* -webkit-user-select: none; */
+    /* touch-action: none; */
+}
+
+
+
+.book-card .page {
+    position: absolute;
+    inset: 0;
+    padding: 28px 32px;
+    border-radius: 16px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* [BACK] 하단 고정 페이지 */
+.book-card .back {
+    z-index: 1;
+    background: #EEF4FF;
+    color: #171717;
+    transform: none !important;
+}
+
+/* [FRONT] 상단 낱장 페이지 */
+.book-card .front {
+    z-index: 2;
+    background: #171717;
+    color: #fff;
+    /* 회전축을 왼쪽 상단으로 옮겨서 포스트잇 떼는 느낌 연출 */
+    transform-origin: left top;
+    transition:
+        transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+        clip-path 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+        opacity 0.5s;
+    overflow: hidden;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* --- 디자인 디테일 --- */
+
+/* 1. 왼쪽 책등 광택 */
+.book-card .front::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent);
+    border-radius: 16px 0 0 16px;
+    z-index: 4;
+}
+
+/* 2. 우측 하단 접힌 삼각형 (핵심 포인트) */
+.book-card .front::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.2) 45%, rgba(0, 0, 0, 0.3) 100%);
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    border-radius: 0 0 16px 0;
+    z-index: 5;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-origin: bottom right;
+}
+
+/* 넘겨진 상태의 최종 모습 */
+.book-card.is-flipped .front {
+    transform: rotateY(-130deg) rotateZ(20deg) translateY(-50px) !important;
+    clip-path: polygon(0% 0%, 0% 0%, 30% 100%, 0% 100%);
+    opacity: 0;
+}
+
+.book-card.is-flipped .front::after {
+    transform: scale(0);
+    /* 넘어가면 자연스럽게 소멸 */
+    opacity: 0;
+}
+
+/* =========================
+   TEXT & HINTS
+========================= */
+.book-card p {
+    font-size: 16px;
+    line-height: 1.5;
+    word-break: keep-all;
+}
+
+.label {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.label.pain {
+    color: #aaa;
+}
+
+.label.solution {
+    color: #2563EB;
+}
+
+.page.back {
+    font-weight: 700;
+}
+
+.flip-hint {
+    position: absolute;
+    bottom: 16px;
+    right: 20px;
+    font-size: 12px;
+    color: #7a7a7a;
+    font-weight: 600;
+    animation: hintMoveLeft 1.6s infinite;
+    z-index: 6;
+}
+
+@keyframes hintMoveLeft {
+
+    0%,
+    100% {
+        transform: translateX(0);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateX(-8px);
+        opacity: 1;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+    .book-grid {
+        flex-direction: column;
+        gap: 60px;
+        margin-top: 80px;
+        align-items: center;
+    }
+
+    .book-grid::after {
+        display: none;
+    }
+
+    .book-card {
+        width: 90vw;
+        max-width: 320px;
+    }
+
+    .role-title {
+        font-size: 50px;
+    }
+}
+
+/* ********************************************************************************************** */
+
+
+/* --- Ecosystem Section --- */
+.ecosystem-section {
+    padding: 120px 0 0 0;
+    /* 상단 여백 확보, 하단은 마키 배너와 밀착 */
+    background-color: #FFFFFF;
+    text-align: center;
+    /* 내부의 인라인 요소들을 중앙으로 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 내부 블록 요소들을 중앙으로 */
+    margin-top: -100px;
+}
+
+@media (max-width:786px) {
+    .ecosystem-section {
+        margin-top: -80px;
+    }
+}
+
+.ecosystem-section .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 컨테이너 내부 요소들 정중앙 정렬 */
+}
+
+.ecosystem-layout {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 6rem;
+    margin-top: 5rem;
+}
+
+.ecosystem-section h2 {
+    font-size: 36px;
+    padding: 0 1rem;
+}
+
+@media (max-width:786px) {
+    .ecosystem-section h2 {
+        font-size: 25px;
+    }
+}
+
+/* 벤다이어그램 이미지 초기 상태 */
+
+
+.venn-container {
+    position: relative;
+    width: 300px;
+    /* 필요시 조절 */
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+.venn-container img {
+    display: block;
+    width: 100%;
+    transform: scale(0.75);
+    /* 살짝 작아졌다가 커지며 등장 */
+    transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+    margin-top: 50px;
+}
+
+/* 가운데 로고 */
+.venn-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    /* 로고 크기 */
+    transform-style: preserve-3d;
+    transform: translate(-50%, -50%);
+    animation: diamondRotate 6s linear infinite;
+
+
+    /* 살짝 입체감 */
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+}
+
+@keyframes diamondRotate {
+    0% {
+        transform: translate(-50%, -50%) rotateY(0deg) rotateX(20deg);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotateY(180deg) rotateX(-20deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotateY(360deg) rotateX(20deg);
+    }
+}
+
+
+
+/* 초기 상태 */
+.ecosystem-visual .fade-in-target {
+    opacity: 0;
+    transform: scale(0.6) translateY(40px);
+    transition:
+        transform 2s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 1.5s ease;
+    will-change: transform, opacity;
+}
+
+/* 활성화 상태 */
+.ecosystem-visual.active .fade-in-target {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.ecosystem-section .en-sub-text {
+    /* 새로 추가된 영문 부제 스타일 */
+    font-size: 14px;
+    color: #606060;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+.ecosystem-list {
+    margin-bottom: -100px;
+}
+
+
+/* 리스트 아이템 공통 스타일 */
+.ecosystem-list li {
+    font-size: 20px;
+    margin-bottom: 24px;
+    padding: 25px 40px;
+    border: 1px solid #f0f0f0;
+    border-radius: 60px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    list-style: none;
+
+    /* 전체 박스 등장 애니메이션 */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s, transform 1s;
+}
+
+/* 핵심: 블러 처리된 강조 텍스트 (초기 상태) */
+.blur-text {
+    display: inline-block;
+    color: #2563EB;
+    font-weight: 700;
+    filter: blur(40px);
+    opacity: 0;
+    transform: scale(1.2);
+
+    /* 3초 동안 아주 천천히 변함 */
+    transition:
+        filter 3.0s cubic-bezier(0.1, 0.5, 0.2, 1),
+        opacity 3.0s ease,
+        transform 3.0s cubic-bezier(0.1, 0.5, 0.2, 1);
+
+    will-change: filter, opacity;
+}
+
+/* --- 활성화 상태 (스크롤이 중간에 도달했을 때) --- */
+
+/* 섹션이 활성화되면 이미지와 박스가 먼저 나타남 */
+.ecosystem-section.active .venn-container img {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.ecosystem-list li {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.ecosystem-section.active li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 강조 텍스트 블러가 걷히는 시점 */
+.ecosystem-section.active .blur-text {
+    filter: blur(0px);
+    /* 블러 사라짐 */
+    opacity: 1;
+    /* 투명도 정상화 */
+    transform: scale(1);
+    /* 크기 정상화 */
+}
+
+/* [핵심] 텍스트가 위에서부터 차례대로 선명해지도록 지연 시간 부여 */
+/* 박스가 나타나는 시간보다 살짝 뒤에 블러가 걷히기 시작하도록 설정했습니다. */
+
+.ecosystem-list li:nth-child(1) .blur-text {
+    transition-delay: 0.3s;
+}
+
+.ecosystem-list li:nth-child(2) .blur-text {
+    transition-delay: 0.8s;
+}
+
+.ecosystem-list li:nth-child(3) .blur-text {
+    transition-delay: 1.3s;
+}
+
+.ecosystem-list li:nth-child(4) .blur-text {
+    transition-delay: 1.8s;
+}
+
+.ecosystem-list li:nth-child(5) .blur-text {
+    transition-delay: 2.3s;
+}
+
+/* 리스트 박스(li) 자체의 등장 지연 시간도 텍스트 속도에 맞춰 소폭 조정 */
+.ecosystem-list li:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.ecosystem-list li:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.ecosystem-list li:nth-child(3) {
+    transition-delay: 0.7s;
+}
+
+.ecosystem-list li:nth-child(4) {
+    transition-delay: 1.0s;
+}
+
+.ecosystem-list li:nth-child(5) {
+    transition-delay: 1.3s;
+}
+
+/* 모바일 대응: 1열 정렬 */
+@media (max-width: 991px) {
+    .ecosystem-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ecosystem-list li {
+        font-size: 17px;
+        padding: 20px;
+    }
+}
+
+
+/* ********************************************************************************************** */
+
+
+/* --- Main Bottom Section --- */
+.main-bottom {
+    /* padding-top: 50px; 상단 여백 대폭 축소 */
+    padding-bottom: 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.main-bottom .container {
+    max-width: 800px;
+    /* 텍스트 집중도를 위해 너비 제한 */
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+
+/* 1. 도트 패턴: 위에서 아래로 드러나는 효과 */
+.dots-pattern {
+    margin-bottom: 30px;
+}
+
+.small-dots {
+    width: 120px;
+    /* 도트 크기 훨씬 작게 조정 */
+    height: auto;
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+    transition: all 1.2s ease-in-out;
+}
+
+.main-bottom.active .small-dots {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+}
+
+/* 2. 텍스트 콘텐츠: 아래에서 위로 등장 */
+.footer-content .en-sub-top,
+.footer-content h3,
+.footer-content .footer-desc,
+.footer-content .en-sub-bottom {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+}
+
+.footer-content h3 {
+    font-size: 35px;
+    padding: 0 1rem;
+}
+
+.footer-content .ko-desc {
+    font-size: 20px;
+    font-weight: 600;
+    color: #171717;
+    font-family: 'pretendard';
+}
+
+.footer-content .ko-desc span {
+    font-weight: 800;
+    color: #525252;
+    /* 혹은 원하는 색 */
+    /* text-shadow: 0 0 15px #2563EB; */
+    font-size: 26px;
+
+}
+
+.footer-content .en-text.top {
+    padding-bottom: 20px;
+}
+
+/* 1. 기본 타이핑 텍스트 스타일 */
+.typing-text {
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+    color: #525252;
+    /* 평소 회색 텍스트 */
+    transition: color 0.3s ease;
+}
+
+/* 2. '밝게' 단어 스타일 */
+.light-word {
+    display: inline-block;
+    color: #525252;
+    /* 켜지기 전에는 주변과 동일 */
+    position: relative;
+    /* 켜질 때 부드럽게 변하도록 트랜지션 보강 */
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* [핵심] 은은하게 불이 들어왔을 때 */
+.light-word.is-lit {
+    /* 흰 배경에서 글자가 보일 수 있도록 아주 살짝 오렌지빛이 도는 노랑 선택 */
+    color: #FFB703;
+    font-weight: 800;
+    /* 애니메이션: 깜빡임 없이 부드럽게 밝아지는 'fadeInLight' */
+    animation: fadeInLight 1.5s ease-out forwards, lightPulse 3.5s ease-in-out infinite 1.5s;
+}
+
+/* 팍! 켜지는 게 아니라 은은하게 전압이 들어오는 느낌 */
+@keyframes fadeInLight {
+    0% {
+        color: #525252;
+        text-shadow: none;
+    }
+
+    100% {
+        color: #FFB703;
+        text-shadow:
+            0 0 10px rgba(255, 183, 3, 0.3),
+            0 0 20px rgba(255, 211, 106, 0.2);
+    }
+}
+
+/* 켜진 후 고급스럽게 숨쉬는 효과 (흰 배경용 대비 조절) */
+@keyframes lightPulse {
+
+    0%,
+    100% {
+        color: #FFB703;
+        text-shadow:
+            0 0 8px rgba(255, 183, 3, 0.4),
+            0 0 20px rgba(255, 183, 3, 0.2);
+    }
+
+    50% {
+        /* 가장 밝아질 때도 글자가 안 보이지 않도록 대비 유지 */
+        color: #E89100;
+        text-shadow:
+            0 0 12px rgba(255, 183, 3, 0.6),
+            0 0 30px rgba(255, 183, 3, 0.3),
+            0 0 45px rgba(255, 183, 3, 0.1);
+    }
+}
+
+/* 커서 스타일 (파란색 포인트 유지) */
+
+@media (max-width:786px) {
+    .ko-desc {
+        margin-top: 50px;
+        margin-bottom: -70px;
+    }
+}
+
+/* 영어 텍스트 스타일 추가 */
+.main-bottom .en-text {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.8s ease;
+    padding: 0 1rem;
+}
+
+.main-bottom .en-text.top {
+    margin-bottom: 15px;
+}
+
+.main-bottom.en-text.bottom {
+    margin-top: 15px;
+}
+
+.main-bottom.active .en-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 텍스트 스타일 정의 (시안 반영) */
+.en-sub-top {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.footer-content h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #171717;
+    line-height: 1.4;
+}
+
+.text-blue {
+    color: #2563EB;
+}
+
+.footer-desc {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.en-sub-bottom {
+    font-size: 14px;
+    color: #999;
+}
+
+/* 순차적 등장을 위한 지연 시간 */
+.footer-content h3 {
+    transition-delay: 0.2s;
+}
+
+.footer-content .footer-desc {
+    transition-delay: 0.4s;
+}
+
+.footer-content .en-sub-bottom {
+    transition-delay: 0.6s;
+}
+
+
+/* --- 활성화 상태 (JS가 active 클래스 추가 시) --- */
+.main-bottom.active .dots-pattern img {
+    /* 가림막(inset)을 0으로 만들어 이미지를 완전히 보여줌 */
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+}
+
+.main-bottom.active .footer-content .en-sub-top,
+.main-bottom.active .footer-content h3,
+.main-bottom.active .footer-content .footer-desc,
+.main-bottom.active .footer-content .en-sub-bottom {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* 무한 스크롤 띠 (Marquee) */
+.marquee-bar {
+    background-color: #2563EB;
+    padding: 15px 0;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 50px;
+    /* 섹션 내용과의 간격 */
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: scrollInfinite 40s linear infinite;
+    /* 항목들이 다닥다닥 붙도록 설정 */
+    gap: 0;
+}
+
+.marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+.marquee-item {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    white-space: nowrap;
+    /* padding-right: 40px; 아이템 간 간격 */
+}
+
+.marquee-item img {
+    height: 20px;
+    /* 아이콘 크기 */
+    /* 핵심: 아이콘 양옆에만 적절한 여백을 줌 */
+    margin: 0 15px 0 25px;
+    /* (상 우 하 좌) 순서. 이미지 뒤(우)보다 앞(좌)을 더 넓게 */
+    vertical-align: middle;
+}
+
+/* 무한 루프 핵심: 트랙의 절반만큼 이동하면 즉시 처음으로 리셋 */
+@keyframes scrollInfinite {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* 모바일 여백 조정 */
+@media (max-width: 768px) {
+    .main-bottom {
+        padding-top: 30px;
+    }
+
+    .footer-content h3 {
+        font-size: 24px;
+    }
+
+    .small-dots {
+        width: 80px;
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 딜레이 옵션 */
+.delay-1 {
+    transition-delay: 0.15s;
+}
+
+.delay-2 {
+    transition-delay: 0.3s;
+}
+
+.delay-3 {
+    transition-delay: 0.45s;
+}
+
+/* --- Footer Section --- */
+.main-footer {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    font-size: 14px;
+    color: #4b5563;
+    /* Gray-600 */
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    font-family: 'Pretendard', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    line-height: 1.6;
+    align-items: center;
+}
+
+.footer-info span {
+    word-break: keep-all;
+}
+
+.separator {
+    color: #d1d5db;
+    /* Gray-300 */
+    margin: 0 4px;
+    font-size: 12px;
+}
+
+.footer-link {
+    color: #4b5563;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+    color: #2563EB;
+}
+
+.footer-copyright {
+    margin-top: 40px;
+    color: #9ca3af;
+    /* Gray-400 */
+    font-size: 13px;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .main-footer {
+        padding: 40px 20px 60px;
+        /* 하단 여백 추가 */
+        font-size: 13px;
+        /* 모바일 폰트 사이즈 조정 */
+        word-break: keep-all;
+    }
+
+    .footer-container {
+        gap: 16px;
+        /* 그룹 간 간격 조정 */
+    }
+
+    .footer-info {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    /* 주소 등 긴 텍스트의 줄바꿈 안전장치 */
+    .footer-info span {
+        line-height: 1.5;
+    }
+
+    .footer-copyright {
+        margin-top: 30px;
+        font-size: 12px;
+    }
+}
+
+/* Footer 문의하기 버튼 */
+.footer-inquiry-btn-wrapper {
+    margin-top: 24px;
+}
+
+.footer-inquiry-btn {
+    background-color: #2563EB;
+    color: #fff;
+    border: none;
+    border-radius: 26px;
+    padding: 14px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    font-family: 'Pretendard', sans-serif;
+}
+
+.footer-inquiry-btn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.footer-inquiry-btn:active {
+    transform: translateY(0);
+}
+
+/* 문의하기 모달 오버레이 */
+.inquiry-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.inquiry-modal-overlay.show {
+    display: flex;
+    opacity: 1;
+}
+
+/* 문의하기 모달 */
+.inquiry-modal {
+    background: #fff;
+    border-radius: 22px;
+    width: 100%;
+    max-width: 480px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.inquiry-modal-overlay.show .inquiry-modal {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* 모달 헤더 */
+.inquiry-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 24px 0;
+}
+
+.inquiry-modal-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #171717;
+    margin: 0;
+}
+
+.inquiry-modal-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: #6b7280;
+    transition: color 0.2s;
+}
+
+.inquiry-modal-close:hover {
+    color: #171717;
+}
+
+/* 모달 콘텐츠 */
+.inquiry-modal-content {
+    padding: 24px;
+}
+
+/* 필드 그룹 */
+.inquiry-field {
+    margin-bottom: 20px;
+}
+
+.inquiry-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #171717;
+    margin-bottom: 8px;
+}
+
+.inquiry-required {
+    color: #EF4444;
+}
+
+/* 입력 필드 */
+.inquiry-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: 'Pretendard', sans-serif;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.inquiry-input:focus {
+    outline: none;
+    border-color: #2563EB;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.inquiry-input::placeholder {
+    color: #9CA3AF;
+}
+
+/* 텍스트영역 */
+.inquiry-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: 'Pretendard', sans-serif;
+    resize: vertical;
+    min-height: 120px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.inquiry-textarea:focus {
+    outline: none;
+    border-color: #2563EB;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.inquiry-textarea::placeholder {
+    color: #9CA3AF;
+}
+
+/* 글자수 카운트 */
+.inquiry-char-count {
+    text-align: right;
+    font-size: 12px;
+    color: #9CA3AF;
+    margin-top: 4px;
+}
+
+/* 파일 업로드 */
+.inquiry-file-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.inquiry-file-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    background-color: #EF4444;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.inquiry-file-btn:hover {
+    background-color: #DC2626;
+}
+
+.inquiry-file-input {
+    display: none;
+}
+
+.inquiry-file-name {
+    font-size: 14px;
+    color: #2563EB;
+    word-break: break-all;
+}
+
+/* 체크박스 */
+.inquiry-checkbox-field {
+    margin-top: 24px;
+}
+
+.inquiry-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.inquiry-checkbox {
+    display: none;
+}
+
+.inquiry-checkbox-custom {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border: 2px solid #E5E7EB;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    background-color: #fff;
+    margin-top: 2px;
+}
+
+.inquiry-checkbox:checked+.inquiry-checkbox-custom {
+    background-color: #EF4444;
+    border-color: #EF4444;
+}
+
+.inquiry-checkbox:checked+.inquiry-checkbox-custom::after {
+    content: '';
+    width: 6px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    margin-bottom: 2px;
+}
+
+.inquiry-checkbox-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #171717;
+}
+
+.inquiry-privacy-notice {
+    margin-top: 10px;
+    margin-left: 30px;
+    padding: 12px;
+    background-color: #F9FAFB;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+/* 제출 버튼 */
+.inquiry-submit-btn {
+    width: 100%;
+    padding: 16px;
+    background-color: #EF4444;
+    color: #fff;
+    border: none;
+    border-radius: 26px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, opacity 0.2s;
+    font-family: 'Pretendard', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.inquiry-submit-btn:hover {
+    background-color: #DC2626;
+}
+
+.inquiry-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* 로딩 스피너 */
+.inquiry-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 하단 안내 문구 */
+.inquiry-footer-notice {
+    text-align: center;
+    font-size: 12px;
+    color: #949196;
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+
+/* 알림 메시지 */
+.inquiry-alert {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.inquiry-alert-error {
+    background-color: #FEF2F2;
+    color: #DC2626;
+    border: 1px solid #FECACA;
+}
+
+.inquiry-alert-success {
+    background-color: #F0FDF4;
+    color: #16A34A;
+    border: 1px solid #BBF7D0;
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+    .inquiry-modal {
+        max-width: calc(100% - 32px);
+        margin: 16px;
+        max-height: calc(100vh - 32px);
+    }
+
+    .inquiry-modal-header {
+        padding: 20px 20px 0;
+    }
+
+    .inquiry-modal-content {
+        padding: 20px;
+    }
+
+    .inquiry-modal-title {
+        font-size: 18px;
+    }
+
+    .inquiry-privacy-notice {
+        margin-left: 0;
+        margin-top: 12px;
+    }
+}

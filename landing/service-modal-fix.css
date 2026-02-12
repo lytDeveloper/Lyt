@@ -1,0 +1,25 @@
+/* 구매 모달 강제 표시 수정 */
+#purchaseModalOverlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(15, 23, 42, 0.8) !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+#purchaseModal {
+  background: white !important;
+  border-radius: 16px !important;
+  max-width: 500px !important;
+  width: 90% !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  z-index: 10000 !important;
+}
